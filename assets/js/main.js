@@ -5,44 +5,32 @@
 // Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
 
 
-
-
+const container = document.getElementById ('container');
+const ulEl = document.querySelector ('ul')
 
 for (let i = 1; i <= 100; i++) {
 
+    let boxLi = document.createElement ('li')
+    ulEl.append (boxLi)
+
     if (i % 3 == 0 && i % 5 == 0) {
         console.log("BuzzFizz");
-        const row = document.querySelector("div.row");
-        const boxBuzzFizz = document.createElement('div.col');
-        boxBuzzFizz.append('BuzzFizz');
-        row.append(boxBuzzFizz);
-        // const main = document.querySelector("main#site_main");
-        // const container = document.createElement('div.container');
-
-        // container.append('elemento');
-        // main.append(container);
+        boxLi.append ('BuzzFizz');
+        boxLi.style.background = "rgb(170, 95, 242)";
 
     } else if (i % 5 == 0) {
         console.log("Buzz");
-        const row = document.querySelector("div.row");
-        const boxBuzz = document.createElement('div.col');
-        boxBuzz.append('Buzz');
-        row.append(boxBuzz);
-
+        boxLi.append ('Buzz');
+        boxLi.style.background = "rgb(40, 245, 66)";
 
     } else if (i % 3 == 0) {
         console.log("Fizz");
-        const row = document.querySelector("div.row");
-        const boxFizz = document.createElement('div.col');
-        boxFizz.append('fizz');
-        row.append(boxFizz);
-
+        boxLi.append ('Fizz');
+        boxLi.style.background = "rgb(70, 45, 22)";
     } else {
         console.log(i);
-        const row = document.querySelector("div.row");
-        const boxNum = document.createElement('div.col');
-        boxNum.append(i);
-        row.append(boxNum);
+        boxLi.append (i);
+        boxLi.style.background = "rgb(240, 55, 42)";
     }
 }
 
